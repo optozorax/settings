@@ -1,0 +1,57 @@
+%YAML 1.2
+---
+name: Mitsuya gramar
+file_extensions: [grm]
+scope: source.grammar
+contexts:
+  main:
+    # Встроеные нетерминалы
+    - match: '\b(Any|Start|End)\b'
+      scope: variable.function
+
+    # Строки
+    - match: '"[^"]*"'
+      scope: string.regexp
+
+    # Начало правила
+    - match: '([a-zA-Z_]+)[ \n\t\r]*(->)'
+      captures:
+        1: keyword.control
+        2: keyword.operator
+
+    # Повторения
+    - match: '<\d*,\d*>'
+      scope: entity.name.struct
+
+    # Повторения и lookahead
+    - match: '[?*+!&]'
+      scope: entity.name.struct
+
+    # Скобки и Или
+    - match: '[|]'
+      scope: keyword.operator
+
+    # Точка с запятой
+    - match: ';'
+      scope: punctuation.terminator
+
+    # interp
+    - match: '\{[^\{\}]*\}'
+      scope: punctuation.definition.string
+
+    # Проценты
+    - match: '\b\d?\d%(\+|\-)?'
+      scope: string.regexp
+
+    # Комментарий
+    - match: '#'
+      scope: punctuation.definition.comment
+      push: line_comment
+
+  # Окончание комментария
+  line_comment:
+    - meta_scope: comment.line
+    - match: $
+      pop: true
+
+

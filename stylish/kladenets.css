@@ -1,0 +1,24 @@
+.left-up .keyborder { border-radius: 5px 0px 0px 0px !important; border-style: solid none none solid !important; }
+.right-up .keyborder { border-radius: 0px 5px 0px 0px !important; border-style: solid solid none none !important; }
+.right-down .keyborder { border-radius: 0px 0px 5px 0px !important; border-style: none solid solid none !important; }
+.left-down .keyborder { border-radius: 0px 0px 0px 5px !important; border-style: none none solid solid !important; }
+
+.left-up .keytop { display: none !important; }
+.right-up .keytop { display: none !important; }
+.right-down .keytop { display: none !important; }
+.left-down .keytop { display: none !important; }
+
+.border .keyborder { background-color: rgba(0,0,0,0) !important; }
+
+.pressed .keytop { border: #FF2222 1.5px dashed !important; }
+
+.left-left .keyborder { border-radius: 5px 0px 0px 5px !important; border-style: solid none solid solid !important; }
+.right-right .keyborder { border-radius: 0px 5px 5px 0px !important; border-style: solid solid solid none !important; }
+
+.left-left .keytop { display: none !important; }
+.right-right .keytop { display: none !important; }
+
+.up-down .keyborder { border-radius: 0px !important; border-style: solid none solid none !important; }
+.up-down .keytop { display: none !important; }
+
+#typetext {word-wrap: anywhere !important;}
